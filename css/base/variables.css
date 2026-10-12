@@ -1,0 +1,35 @@
+
+/* KİTAPKÖŞESİ - RENK PALETİ */
+
+:root {
+
+  /* Ana renkler */
+  --color-ink: #30283D;
+  --color-muted: #81768D;
+  --color-paper: #F3EFF8;
+  --color-white: #FFFCFA;
+
+  /* Vurgu renkleri */
+  --color-coral: #C98291;
+  --color-coral-dark: #A85D75;
+
+  /* Pastel renkler */
+  --color-sand: #F2E5DC;
+  --color-blue: #A99ACB;
+  --color-green: #91B6A2;
+  --color-yellow: #E8B07C;
+
+  /* Yazı tipleri */
+  --font-body: Arial, Helvetica, sans-serif;
+  --font-display: Georgia, 'Times New Roman', serif;
+
+  /* Sayfa genişliği */
+  --container-width: 1160px;
+
+  /* Kart köşeleri */
+  --radius-card: 24px;
+
+  /* Yumuşak gölgeler */
+  --shadow-soft: 0 16px 45px rgb(48 40 61 / 12%);
+
+}

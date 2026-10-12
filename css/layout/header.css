@@ -1,0 +1,182 @@
+
+/* ÜST MENÜ */
+
+.site-header {
+  position: relative;
+  z-index: 10;
+  background: #FFFCFA;
+  border-bottom: 1px solid #E7DDEC;
+  box-shadow: 0 4px 24px rgb(48 40 61 / 5%);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 90px;
+}
+
+/* LOGO */
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -.04em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: var(--color-coral);
+  color: white;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  box-shadow: 0 5px 15px rgb(201 130 145 / 25%);
+}
+
+.brand-accent {
+  color: var(--color-coral-dark);
+}
+
+/* MENÜ BAĞLANTILARI */
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.main-nav a {
+  position: relative;
+  padding-block: 10px;
+  color: var(--color-muted);
+  font-size: .88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.main-nav a:hover,
+.main-nav a.is-current {
+  color: var(--color-coral-dark);
+}
+
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--color-coral);
+  transition: width .25s;
+}
+
+.main-nav a:hover::after,
+.main-nav a.is-current::after {
+  width: 100%;
+}
+
+/* GİRİŞ VE SEPET */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.header-actions .text-link {
+  color: var(--color-ink);
+  font-size: .85rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.header-actions .text-link:hover {
+  color: var(--color-coral-dark);
+}
+
+.cart-count {
+  display: inline-grid;
+  place-items: center;
+  width: 21px;
+  height: 21px;
+  margin-left: 3px;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 25%);
+  color: inherit;
+  font-size: .7rem;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .header-inner {
+    flex-wrap: wrap;
+    padding-block: 18px;
+  }
+
+  .main-nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: clamp(12px, 4vw, 30px);
+  }
+}
+
+/* TELEFON */
+
+@media (max-width: 520px) {
+  .header-inner {
+    gap: 14px;
+  }
+
+  .brand {
+    gap: 8px;
+    font-size: 1.1rem;
+  }
+
+  .brand-mark {
+    width: 36px;
+    height: 36px;
+    font-size: 1.3rem;
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+
+  .header-actions .text-link {
+    display: none;
+  }
+
+  .main-nav {
+    gap: 14px;
+  }
+
+  .main-nav a {
+    font-size: .75rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .main-nav {
+    gap: 9px;
+  }
+
+  .main-nav a {
+    font-size: .7rem;
+  }
+}

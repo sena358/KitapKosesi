@@ -1,0 +1,677 @@
+
+/* ==================================
+   KİTAPKÖŞESİ - ANA SAYFA
+================================== */
+
+/* HERO - GİRİŞ BÖLÜMÜ */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: #F3EFF8;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -150px;
+  left: -130px;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: #E6D7FF;
+  opacity: .5;
+}
+
+.hero-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  align-items: center;
+  gap: 50px;
+  min-height: 650px;
+  padding-block: 85px;
+}
+
+/* SOL TARAFTAKİ YAZILAR */
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #9D5283;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+
+.eyebrow-line {
+  width: 28px;
+  height: 3px;
+  border-radius: 10px;
+  background: #F46A8A;
+}
+
+.hero-copy h1 {
+  margin-top: 25px;
+  color: #30283D;
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  line-height: 1.12;
+  letter-spacing: -.05em;
+}
+
+.hero-copy h1 em {
+  color: #E65B86;
+  font-weight: 400;
+}
+
+.hero-description {
+  max-width: 480px;
+  margin-top: 25px;
+  color: #71667D;
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+/* HERO BUTONLARI */
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 35px;
+}
+
+.underlined-link {
+  color: #30283D;
+  font-size: .9rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: #F46A8A;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
+.underlined-link:hover {
+  color: #E65B86;
+}
+
+/* KİTAP SEVER SAYISI */
+
+.hero-proof {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 48px;
+}
+
+.avatar-stack {
+  display: flex;
+  padding-left: 8px;
+}
+
+.avatar-stack span {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  margin-left: -8px;
+  border: 3px solid #F3EFF8;
+  border-radius: 50%;
+  color: #30283D;
+  font-size: .65rem;
+  font-weight: 800;
+}
+
+.avatar-stack span:nth-child(1) {
+  background: #FFC857;
+}
+
+.avatar-stack span:nth-child(2) {
+  background: #F46A8A;
+}
+
+.avatar-stack span:nth-child(3) {
+  background: #56CDBB;
+}
+
+.hero-proof p {
+  color: #71667D;
+  font-size: .8rem;
+  line-height: 1.5;
+}
+
+.hero-proof strong {
+  color: #30283D;
+  font-size: 1rem;
+}
+
+/* ==================================
+   SAĞ TARAFTAKİ KİTAP ÇİZİMİ
+================================== */
+
+.hero-art {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 470px;
+  isolation: isolate;
+}
+
+/* Arkadaki büyük renkli şekil */
+
+.art-sun {
+  position: absolute;
+  z-index: -2;
+  width: 370px;
+  height: 370px;
+  border-radius: 43% 57% 60% 40%;
+  background: #D8C3FF;
+  transform: rotate(-15deg);
+}
+
+/* Dekoratif halka */
+
+.art-orbit {
+  position: absolute;
+  z-index: -1;
+  width: 430px;
+  height: 320px;
+  border: 2px dashed #A38AF5;
+  border-radius: 50%;
+  transform: rotate(-25deg);
+  opacity: .7;
+}
+
+/* AÇIK KİTAP */
+
+.open-book {
+  position: relative;
+  display: flex;
+  width: min(390px, 90%);
+  height: 250px;
+  filter: drop-shadow(0 25px 20px rgb(48 40 61 / 20%));
+  transform: rotate(-8deg);
+  transition: transform .4s ease;
+}
+
+.open-book:hover {
+  transform: rotate(-3deg) translateY(-8px);
+}
+
+/* Kitabın sayfaları */
+
+.book-page {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  min-width: 0;
+  padding: 25px 15px;
+  background: #FFFDF6;
+  border: 1px solid #E8D8D8;
+}
+
+.book-page-left {
+  border-radius: 15px 4px 4px 20px;
+  box-shadow: inset -14px 0 20px rgb(48 40 61 / 8%);
+  transform: skewY(-4deg);
+}
+
+.book-page-right {
+  border-radius: 4px 15px 20px 4px;
+  box-shadow: inset 14px 0 20px rgb(48 40 61 / 8%);
+  transform: skewY(4deg);
+}
+
+/* Kitap içindeki süslemeler */
+
+.page-decoration {
+  color: #F46A8A;
+  font-size: 2.3rem;
+}
+
+.book-page-right .page-decoration {
+  color: #A38AF5;
+}
+
+.page-title {
+  color: #30283D;
+  font-family: var(--font-display);
+  font-size: clamp(.85rem, 1.6vw, 1.25rem);
+  font-style: italic;
+  text-align: center;
+}
+
+.page-lines {
+  display: block;
+  width: 75%;
+  height: 28px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #DCCFD9 0,
+    #DCCFD9 1px,
+    transparent 1px,
+    transparent 10px
+  );
+  opacity: .8;
+}
+
+/* UÇUŞAN YILDIZLAR */
+
+.floating-star {
+  position: absolute;
+  color: #F46A8A;
+  font-size: 3rem;
+  animation: float-star 4s ease-in-out infinite;
+}
+
+.star-one {
+  top: 45px;
+  right: 55px;
+  color: #FFC857;
+}
+
+.star-two {
+  bottom: 75px;
+  left: 35px;
+  color: #F46A8A;
+  font-size: 4rem;
+  animation-delay: 1s;
+}
+
+.star-three {
+  top: 100px;
+  left: 50px;
+  color: #56CDBB;
+  font-size: 2.5rem;
+  animation-delay: 2s;
+}
+
+/* UÇUŞAN SAYFALAR */
+
+.floating-page {
+  position: absolute;
+  width: 45px;
+  height: 60px;
+  border-radius: 5px 15px 5px 5px;
+  background: #FFFDF6;
+  border: 1px solid #D9C5E8;
+  box-shadow: 0 8px 15px rgb(48 40 61 / 10%);
+}
+
+.page-one {
+  top: 50px;
+  left: 120px;
+  transform: rotate(-25deg);
+}
+
+.page-two {
+  right: 45px;
+  bottom: 100px;
+  transform: rotate(25deg);
+}
+
+/* Küçük not */
+
+.art-note {
+  position: absolute;
+  right: 0;
+  bottom: 20px;
+  padding: 15px 20px;
+  border-radius: 16px 16px 5px 16px;
+  background: #FFC857;
+  color: #30283D;
+  font-family: var(--font-display);
+  font-size: .9rem;
+  font-style: italic;
+  line-height: 1.5;
+  box-shadow: 0 10px 25px rgb(48 40 61 / 12%);
+  transform: rotate(5deg);
+}
+
+@keyframes float-star {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* ==================================
+   AVANTAJLAR BÖLÜMÜ
+================================== */
+
+.benefit-strip {
+  background: #ffffff;
+  border-bottom: 1px solid #EEE6F0;
+}
+
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+  padding-block: 32px;
+}
+
+.benefit-grid > * {
+  min-width: 0;
+}
+
+.benefit-grid > * + * {
+  border-left: 1px solid #EEE6F0;
+  padding-left: 30px;
+}
+
+.benefit-grid h3 {
+  color: #30283D;
+  font-size: .95rem;
+}
+
+.benefit-grid p {
+  margin-top: 6px;
+  color: #81768D;
+  font-size: .82rem;
+  line-height: 1.6;
+}
+
+/* ==================================
+   ÖNE ÇIKAN KİTAPLAR
+================================== */
+
+#editors-picks {
+  background: #FFFCFA;
+}
+
+#editors-picks .section-heading h2 {
+  color: #30283D;
+}
+
+#editors-picks .section-heading em {
+  color: #E65B86;
+}
+
+/* ==================================
+   TANITIM BÖLÜMÜ
+================================== */
+
+.feature-band {
+  overflow: hidden;
+  background: #EAE0FF;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 70px;
+  padding-block: 85px;
+}
+
+.feature-circle {
+  display: grid;
+  place-items: center;
+  width: min(350px, 100%);
+  aspect-ratio: 1;
+  margin-inline: auto;
+  border-radius: 38% 62% 55% 45%;
+  background: #A38AF5;
+  color: #30283D;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4rem);
+  text-align: center;
+  box-shadow: 20px 20px 0 #F46A8A;
+  transform: rotate(-8deg);
+}
+
+.feature-copy h2 {
+  margin-top: 15px;
+  color: #30283D;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  line-height: 1.2;
+}
+
+.feature-copy p {
+  margin-top: 20px;
+  color: #71667D;
+  line-height: 1.85;
+}
+
+.feature-copy .button {
+  margin-top: 25px;
+}
+
+/* ==================================
+   BÜLTEN BÖLÜMÜ
+================================== */
+
+.newsletter-section {
+  padding-block: 85px;
+  background: #D6F4EB;
+  text-align: center;
+}
+
+.newsletter-section h2 {
+  color: #30283D;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+}
+
+.newsletter-section p {
+  max-width: 550px;
+  margin: 18px auto 0;
+  color: #5B726C;
+  line-height: 1.8;
+}
+
+.newsletter-form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 540px;
+  margin: 30px auto 0;
+}
+
+.form-control {
+  flex: 1;
+  min-width: 0;
+  min-height: 52px;
+  padding: 0 20px;
+  border: 1px solid #B9DDD3;
+  border-radius: 30px;
+  background: white;
+  color: #30283D;
+  font: inherit;
+  outline: none;
+}
+
+.form-control:focus {
+  border-color: #A38AF5;
+  box-shadow: 0 0 0 3px rgb(163 138 245 / 20%);
+}
+
+/* ==================================
+   TABLET
+================================== */
+
+@media (max-width: 900px) {
+  .hero-grid {
+    gap: 25px;
+  }
+
+  .hero-art {
+    min-height: 390px;
+  }
+
+  .art-sun {
+    width: 300px;
+    height: 300px;
+  }
+
+  .art-orbit {
+    width: 340px;
+    height: 270px;
+  }
+
+  .open-book {
+    height: 210px;
+  }
+
+  .feature-grid {
+    gap: 35px;
+  }
+}
+
+/* ==================================
+   TELEFON
+================================== */
+
+@media (max-width: 700px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-block: 65px;
+  }
+
+  .hero-copy {
+    text-align: center;
+  }
+
+  .eyebrow,
+  .hero-actions,
+  .hero-proof {
+    justify-content: center;
+  }
+
+  .hero-description {
+    margin-inline: auto;
+  }
+
+  .hero-art {
+    min-height: 400px;
+  }
+
+  .benefit-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .benefit-grid > * + * {
+    border-left: 0;
+    border-top: 1px solid #EEE6F0;
+    padding-top: 20px;
+    padding-left: 0;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .feature-circle {
+    width: min(280px, 80%);
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-form .form-control,
+  .newsletter-form .button {
+    width: 100%;
+  }
+}
+
+/* ==================================
+   KÜÇÜK TELEFON
+================================== */
+
+@media (max-width: 420px) {
+  .hero-copy h1 {
+    font-size: 2.65rem;
+  }
+
+  .hero-art {
+    min-height: 330px;
+  }
+
+  .art-sun {
+    width: 245px;
+    height: 245px;
+  }
+
+  .art-orbit {
+    width: 280px;
+    height: 225px;
+  }
+
+  .open-book {
+    width: 85%;
+    height: 185px;
+  }
+
+  .book-page {
+    gap: 10px;
+    padding: 15px 8px;
+  }
+
+  .page-decoration {
+    font-size: 1.7rem;
+  }
+
+  .star-one {
+    right: 10px;
+  }
+
+  .star-two {
+    left: 5px;
+  }
+
+  .star-three {
+    left: 15px;
+  }
+
+  .page-one {
+    left: 55px;
+  }
+
+  .page-two {
+    right: 10px;
+  }
+
+  .art-note {
+    right: 0;
+    bottom: 0;
+    padding: 10px 13px;
+    font-size: .75rem;
+  }
+}
+
+/* Hareket azaltma tercihi */
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-star {
+    animation: none;
+  }
+
+  .open-book {
+    transition: none;
+  }
+
+  .open-book:hover {
+    transform: rotate(-8deg);
+  }
+}

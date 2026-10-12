@@ -1,0 +1,346 @@
+
+/* ==================================
+   KİTAPKÖŞESİ - KİTAP KARTLARI
+================================== */
+
+/* Kitapların dizilişi */
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 26px;
+}
+
+/* Kartın dış görünümü */
+
+.product-card {
+  min-width: 0;
+  padding: 12px;
+  background: #ffffff;
+  border: 1px solid #E9DFED;
+  border-radius: 24px;
+
+  box-shadow: 0 8px 25px rgb(48 40 61 / 8%);
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 18px 38px rgb(48 40 61 / 16%);
+}
+
+/* ==================================
+   KİTAP KAPAKLARI
+================================== */
+
+.cover {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 20px;
+
+  min-height: 300px;
+  padding: 25px 18px;
+
+  overflow: hidden;
+
+  color: #30283D;
+  text-align: center;
+  text-decoration: none;
+
+  transition: transform .3s ease;
+}
+
+/* Kapak üzerine gelince */
+
+.cover:hover {
+  transform: rotate(-2deg) scale(1.02);
+}
+
+/* Kapak içindeki dekoratif çerçeve */
+
+.cover::before {
+  position: absolute;
+  content: '';
+
+  inset: 13px;
+
+  border: 1px solid rgb(48 40 61 / 30%);
+  border-radius: inherit;
+
+  pointer-events: none;
+}
+
+/* Kitap başlığı */
+
+.cover strong {
+  position: relative;
+  z-index: 1;
+
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/* Küçük kapak yazıları */
+
+.cover small,
+.cover-label {
+  position: absolute;
+  z-index: 1;
+
+  font-size: .55rem;
+  font-weight: 800;
+  letter-spacing: .13em;
+}
+
+.cover-label {
+  top: 32px;
+}
+
+.cover small {
+  bottom: 32px;
+}
+
+/* ==================================
+   CANLI RENKLER VE FARKLI ŞEKİLLER
+================================== */
+
+/* 1. Canlı pembe */
+
+.cover-coral {
+  background: #F46A8A;
+  border-radius: 18px 70px 18px 18px;
+}
+
+/* 2. Elektrik moru */
+
+.cover-blue {
+  background: #A38AF5;
+  border-radius: 70px 18px 18px 18px;
+}
+
+/* 3. Mango sarısı */
+
+.cover-yellow {
+  background: #FFC857;
+  border-radius: 18px 18px 70px 18px;
+}
+
+/* 4. Turkuaz */
+
+.cover-green {
+  background: #56CDBB;
+  border-radius: 18px 18px 18px 70px;
+}
+
+/* ==================================
+   KİTAP BİLGİLERİ
+================================== */
+
+.product-info {
+  padding: 20px 8px 10px;
+}
+
+/* Kitap kategorisi */
+
+.product-category {
+  color: var(--color-coral-dark);
+  font-size: .65rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+/* Kitap adı */
+
+.product-info h3 {
+  margin-top: 10px;
+  font-size: 1.08rem;
+  line-height: 1.35;
+}
+
+.product-info h3 a {
+  color: var(--color-ink);
+  text-decoration: none;
+
+  transition: color .2s ease;
+}
+
+.product-info h3 a:hover {
+  color: var(--color-coral-dark);
+}
+
+/* Yazar adı */
+
+.author {
+  margin-top: 7px;
+  color: var(--color-muted);
+  font-size: .82rem;
+}
+
+/* ==================================
+   FİYAT VE PUAN
+================================== */
+
+.product-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 18px;
+  padding-top: 14px;
+
+  border-top: 1px solid #EEE6F0;
+
+  font-size: .92rem;
+}
+
+/* Kitap fiyatı */
+
+.product-bottom strong {
+  color: var(--color-ink);
+  font-size: 1rem;
+}
+
+/* Yıldız puanı */
+
+.rating {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 6px 10px;
+
+  border-radius: 20px;
+
+  background: #FFF0D8;
+  color: #92661C;
+
+  font-size: .75rem;
+  font-weight: 800;
+}
+
+/* ==================================
+   TABLET TASARIMI
+================================== */
+
+@media (max-width: 900px) {
+  .book-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .cover {
+    min-height: 290px;
+  }
+}
+
+/* ==================================
+   TELEFON TASARIMI
+================================== */
+
+@media (max-width: 480px) {
+  .book-grid {
+    gap: 14px;
+  }
+
+  .product-card {
+    padding: 8px;
+    border-radius: 18px;
+  }
+
+  .cover {
+    min-height: 220px;
+    padding-inline: 10px;
+  }
+
+  .cover-coral {
+    border-radius: 12px 45px 12px 12px;
+  }
+
+  .cover-blue {
+    border-radius: 45px 12px 12px 12px;
+  }
+
+  .cover-yellow {
+    border-radius: 12px 12px 45px 12px;
+  }
+
+  .cover-green {
+    border-radius: 12px 12px 12px 45px;
+  }
+
+  .cover-label {
+    top: 24px;
+    font-size: .45rem;
+  }
+
+  .cover small {
+    bottom: 24px;
+    font-size: .45rem;
+  }
+
+  .cover strong {
+    font-size: 1.2rem;
+  }
+
+  .product-info {
+    padding: 14px 4px 8px;
+  }
+
+  .product-info h3 {
+    font-size: .9rem;
+  }
+
+  .product-bottom {
+    font-size: .8rem;
+  }
+
+  .product-bottom strong {
+    font-size: .85rem;
+  }
+
+  .rating {
+    padding: 4px 7px;
+    font-size: .7rem;
+  }
+}
+
+/* ==================================
+   ÇOK KÜÇÜK TELEFONLAR
+================================== */
+
+@media (max-width: 350px) {
+  .book-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cover {
+    min-height: 260px;
+  }
+}
+
+/* Hareket azaltma tercihi */
+
+@media (prefers-reduced-motion: reduce) {
+  .product-card,
+  .cover {
+    transition: none;
+  }
+
+  .product-card:hover,
+  .cover:hover {
+    transform: none;
+  }
+}
